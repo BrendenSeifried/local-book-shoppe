@@ -1,8 +1,8 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
-DROP TABLE IF EXISTS books;
-DROP TABLE IF EXISTS authors;
 DROP TABLE IF EXISTS combos;
+DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS books;
 
 CREATE table books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -62,7 +62,14 @@ INSERT INTO combos (
     author_id
 )
 VALUES
-(1,1);
+(1,1),
+(2, 6),
+(3, 5),
+(4, 3),
+(4, 4),
+(5, 8),
+(6, 7),
+(7, 2);
 
 
 
