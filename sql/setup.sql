@@ -5,14 +5,15 @@ DROP TABLE IF EXISTS authors;
 
 CREATE table books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    title VARCHAR,
-    release INT
+    title VARCHAR NOT NULL,
+    release INT NOT NULL
 );
 
 CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    writer VARCHAR,
-    dob VARCHAR
+    writer VARCHAR NOT NULL,
+    pob VARCHAR NOT NULL,
+    dob VARCHAR NOT NULL
 );
 
 INSERT INTO books (
@@ -32,18 +33,19 @@ VALUES
 
 INSERT INTO authors (
     writer,
+    pob,
     dob
 )
 
 VALUES
-('Louis Barthas', '7.14.1879'),
-('Hunter S Thompson', '7.18.1937'),
-('Chris Voss', '11.28.1957'),
-('Tahl Raz', '4.15.1978'),
-('George S. Patton', '11.11.1885'),
-('Jodi Picoult', '5.19.1966'),
-('Nicholas Sparks', '12.31.1965'),
-('Sandra Scoppettone', '6.14.1936');
+('Louis Barthas', 'Homps, Aude, France', '7.14.1879'),
+('Hunter S Thompson', 'Louisville, Kentucky, U.S.', '7.18.1937'),
+('Chris Voss', 'Mt. Pleasant, Iowa, U.S.', '11.28.1957'),
+('Tahl Raz', 'Parts Unkown', '4.15.1978'),
+('George S. Patton','San Gabriel, California, U.S.', '11.11.1885'),
+('Jodi Picoult', 'Nesconset, New York, U.S.', '5.19.1966'),
+('Nicholas Sparks', 'Omaha, Nebraska, U.S.', '12.31.1965'),
+('Sandra Scoppettone', 'Morristown, New Jersey, U.S.', '6.14.1936');
 
 
 

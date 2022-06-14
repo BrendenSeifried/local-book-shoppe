@@ -19,6 +19,7 @@ describe('Testing authors', () => {
     const Voss = {
       id: '3',
       writer: 'Chris Voss',
+      pob: 'Mt. Pleasant, Iowa, U.S.',
       dob: '11.28.1957',
     };
     expect(resp.body).toEqual(Voss);
