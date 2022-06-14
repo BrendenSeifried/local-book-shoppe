@@ -8,6 +8,12 @@ CREATE table books (
     release INT
 );
 
+CREATE TABLE authors (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    writer VARCHAR,
+    dob INT
+)
+
 INSERT INTO books (
     title,
     release
@@ -22,4 +28,13 @@ VALUES
 ('The Notebook', 1996),
 ('Fear And Loathing In Las Vegas', 1971);
 
+
+INSERT INTO books (
+    writer,
+    dob
+)
+
+VALUES
+('Louis Barthas', 7.14.1879)
+('Hunter S Thompson', 7.18.1937)
 
