@@ -10,6 +10,9 @@ describe('First test for Books', () => {
   it('Checking that /books Renders a list of books.', async () => {
     const resp = await request(app).get('/books');
     expect(resp.body.length).toEqual(7);
+    const test = resp.body.find((item) => item.id === '2');
+    expect(test).toHaveProperty('title', 'My Sisters Keeper');
+    expect(test).toHaveProperty('release', 2004);
   });
   afterAll(() => {
     pool.end();
