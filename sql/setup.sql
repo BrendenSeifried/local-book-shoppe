@@ -2,6 +2,7 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS combos;
 
 CREATE table books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -14,6 +15,15 @@ CREATE TABLE authors (
     writer VARCHAR NOT NULL,
     pob VARCHAR NOT NULL,
     dob VARCHAR NOT NULL
+);
+
+CREATE TABLE combos (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    author_id INT NOT NULL,
+    book_id INT NOT NULL,
+    FOREIGN KEY (book_id) REFERENCES books(id),
+    FOREIGN KEY (author_id) REFERENCES authors(id)
+
 );
 
 INSERT INTO books (
@@ -46,6 +56,13 @@ VALUES
 ('Jodi Picoult', 'Nesconset, New York, U.S.', '5.19.1966'),
 ('Nicholas Sparks', 'Omaha, Nebraska, U.S.', '12.31.1965'),
 ('Sandra Scoppettone', 'Morristown, New Jersey, U.S.', '6.14.1936');
+
+INSERT INTO combos (
+    book_id,
+    author_id
+)
+VALUES
+(1,1);
 
 
 
