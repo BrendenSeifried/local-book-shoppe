@@ -10,6 +10,9 @@ describe('Testing authors', () => {
   it('Test for /authors list', async () => {
     const resp = await request(app).get('/authors');
     expect(resp.body.length).toEqual(8);
+    const test = resp.body.find((item) => item.id === '6');
+    expect(test).toHaveProperty('writer', 'Jodi Picoult');
+    // expect(test).toHaveProperty('dob', '5.19.1966');
   });
   afterAll(() => {
     pool.end();
