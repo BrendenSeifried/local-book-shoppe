@@ -12,7 +12,16 @@ describe('Testing authors', () => {
     expect(resp.body.length).toEqual(8);
     const test = resp.body.find((item) => item.id === '6');
     expect(test).toHaveProperty('writer', 'Jodi Picoult');
-    // expect(test).toHaveProperty('dob', '5.19.1966');
+  });
+
+  it('Test for individual authors id route ', async () => {
+    const resp = await request(app).get('/authors/3');
+    const Voss = {
+      id: '3',
+      writer: 'Chris Voss',
+      dob: '11.28.1957',
+    };
+    expect(resp.body).toEqual(Voss);
   });
   afterAll(() => {
     pool.end();

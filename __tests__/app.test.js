@@ -14,6 +14,7 @@ describe('First test for Books', () => {
     expect(test).toHaveProperty('title', 'My Sisters Keeper');
     expect(test).toHaveProperty('release', 2004);
   });
+
   afterAll(() => {
     pool.end();
   });
