@@ -14,17 +14,6 @@ describe('Testing authors', () => {
     expect(test).toHaveProperty('writer', 'Jodi Picoult');
   });
 
-  // it('Test for individual authors id route ', async () => {
-  //   const resp = await request(app).get('/authors/3');
-  //   const Voss = {
-  //     id: '3',
-  //     writer: 'Chris Voss',
-  //     pob: 'Mt. Pleasant, Iowa, U.S.',
-  //     dob: '11.28.1957',
-  //   };
-  //   expect(resp.body).toEqual(Voss);
-  // });
-
   it('Test for individual authors id route ', async () => {
     const resp = await request(app).get('/authors/3');
     const Voss = {
