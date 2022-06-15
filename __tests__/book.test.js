@@ -15,16 +15,6 @@ describe('First test for Books', () => {
     expect(test).toHaveProperty('release', 2004);
   });
 
-  // it('Rendering a single book with related info', async () => {
-  //   const resp = await request(app).get('/books/5');
-  //   const test = {
-  //     id: '5',
-  //     title: 'The Late Great Me',
-  //     release: 1976,
-  //   };
-  //   expect(resp.body).toEqual(test);
-  // });
-
   it('Rendering a single book with related info', async () => {
     const resp = await request(app).get('/books/5');
     const test = {
