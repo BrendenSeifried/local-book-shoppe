@@ -18,7 +18,7 @@ describe('First test for Books', () => {
   it('Rendering a single book with related info', async () => {
     const resp = await request(app).get('/books/5');
     const test = {
-      id: '8',
+      id: '5',
       title: 'The Late Great Me',
       release: 1976,
       authors: [

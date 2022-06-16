@@ -17,7 +17,7 @@ describe('Testing authors', () => {
   it('Test for individual authors id route ', async () => {
     const resp = await request(app).get('/authors/3');
     const Voss = {
-      id: '4',
+      id: '3',
       dob: '11.28.1957',
       writer: 'Chris Voss',
       pob: 'Mt. Pleasant, Iowa, U.S.',
