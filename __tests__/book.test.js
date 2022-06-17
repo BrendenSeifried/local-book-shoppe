@@ -33,6 +33,17 @@ describe('First test for Books', () => {
     expect(resp.body).toEqual(test);
   });
 
+  it('Adding a new book', async () => {
+    const resp = await request(app).post('/books').send({
+      title: 'newBook',
+      release: 2022,
+    });
+    expect(resp.status).toEqual(200);
+
+    expect(resp.body).toHaveProperty('title', 'newBook');
+    expect(resp.body).toHaveProperty('release', 2022);
+  });
+
   afterAll(() => {
     pool.end();
   });
