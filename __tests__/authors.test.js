@@ -32,6 +32,19 @@ describe('Testing authors', () => {
     expect(resp.body).toEqual(Voss);
   });
 
+  it('Adding a new author(myself)', async () => {
+    const resp = await request(app).post('/authors').send({
+      writer: 'Brenden Seifried',
+      dob: '1992',
+      pob: 'San Jose, CA',
+    });
+    expect(resp.status).toEqual(200);
+
+    expect(resp.body).toHaveProperty('writer', 'Brenden Seifried');
+    expect(resp.body).toHaveProperty('dob', '1992');
+    expect(resp.body).toHaveProperty('pob', 'San Jose, CA');
+  });
+
   afterAll(() => {
     pool.end();
   });

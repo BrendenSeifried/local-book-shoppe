@@ -39,7 +39,6 @@ describe('First test for Books', () => {
       release: 2022,
     });
     expect(resp.status).toEqual(200);
-
     expect(resp.body).toHaveProperty('title', 'newBook');
     expect(resp.body).toHaveProperty('release', 2022);
   });
